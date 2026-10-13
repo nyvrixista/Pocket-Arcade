@@ -1,24 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pocket Arcade - Trophies</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <a href="index.html" class="brand">PA<span>.</span></a>
-            <nav aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a href="arcade.html">Arcade</a>
-                <a href="trophies.html" class="active">Trophies</a>
-            </nav>
-        </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trophy Room | Pocket Arcade</title>
 
-        <main class="welcome">
-            <h1>TROPHIES</h1>
-            <p>Your achievements will appear here.</p>
-        </main>
-    </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="trophy-header">
+    <a href="index.html" class="brand">PA<span>.</span></a>
+
+    <nav class="trophy-nav">
+      <a href="index.html">HOME</a>
+      <a href="arcade.html">ARCADE</a>
+      <a href="trophies.html" class="active">TROPHIES</a>
+    </nav>
+  </header>
+
+  <main class="trophy-main">
+    <section class="trophy-hero">
+      <span class="trophy-eyebrow">YOUR ARCADE LEGACY</span>
+      <h1>TROPHY ROOM</h1>
+      <p>Every game counts. Every high score has a story.</p>
+    </section>
+
+    <section class="trophy-stats">
+      <div class="trophy-stat">
+        <span class="stat-icon">🎮</span>
+        <strong id="total-plays">0</strong>
+        <span>TOTAL GAMES</span>
+      </div>
+
+      <div class="trophy-stat">
+        <span class="stat-icon">⚡</span>
+        <strong id="total-score">0</strong>
+        <span>COMBINED BEST</span>
+      </div>
+
+      <div class="trophy-stat">
+        <span class="stat-icon">🏆</span>
+        <strong id="total-trophies">0/6</strong>
+        <span>TROPHIES UNLOCKED</span>
+      </div>
+    </section>
+
+    <section class="trophy-section">
+      <div class="trophy-section-heading">
+        <span>01 / YOUR RECORDS</span>
+        <h2>HIGH SCORES</h2>
+      </div>
+
+      <div class="records-grid">
+        <article class="record-card">
+          <span class="record-emoji">🎮</span>
+          <span class="record-label">GAME 01</span>
+          <h3>SPACE DEFENDER</h3>
+          <strong id="record-space">0</strong>
+          <p>BEST SCORE</p>
+          <span id="plays-space" class="record-plays">0 games played</span>
+        </article>
+
+        <article class="record-card">
+          <span class="record-emoji">🐍</span>
+          <span class="record-label">GAME 02</span>
+          <h3>NEON SNAKE</h3>
+          <strong id="record-snake">0</strong>
+          <p>BEST SCORE</p>
+          <span id="plays-snake" class="record-plays">0 games played</span>
+        </article>
+
+        <article class="record-card">
+          <span class="record-emoji">🧱</span>
+          <span class="record-label">GAME 03</span>
+          <h3>BRICK BREAKER</h3>
+          <strong id="record-brick">0</strong>
+          <p>BEST SCORE</p>
+          <span id="plays-brick" class="record-plays">0 games played</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="trophy-section">
+      <div class="trophy-section-heading">
+        <span>02 / THE COLLECTION</span>
+        <h2>ACHIEVEMENTS</h2>
+      </div>
+
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </section>
+
+    <div class="trophy-footer">
+      <p>THE NEXT HIGH SCORE IS WAITING.</p>
+      <a href="arcade.html" class="trophy-play">BACK TO ARCADE ↗</a>
+    </div>
+  </main>
+
+  <script src="js/trophies.js"></script>
+</body>
 </html>

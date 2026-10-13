@@ -4,11 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pocket Arcade - Games</title>
+        <meta name="description" content="Discover the games inside Pocket Arcade. Three games, endless retries.">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="css/style.css">
     </head>
+
     <body>
         <header class="site-header">
             <a href="index.html" class="brand">PA<span>.</span></a>
+
             <nav aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="arcade.html" class="active">Arcade</a>
@@ -16,9 +24,222 @@
             </nav>
         </header>
 
-        <main class="welcome">
-            <h1>THE ARCADE</h1>
-            <p>Games coming soon...</p>
+        <main class="arcade-page">
+            <section class="arcade-intro">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    PLAYER ONE, WELCOME BACK
+                </div>
+
+                <h1>CHOOSE YOUR<br><span>GAME.</span></h1>
+
+                <p class="arcade-subtitle">
+                    Three machines. Three challenges.
+                    How high can you score?
+                </p>
+
+                <div class="arcade-stats">
+                    <div>
+                        <span class="stat-number">03</span>
+                        <span class="stat-label">GAMES</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">RETRIES</span>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div>
+                        <span class="stat-number">00</span>
+                        <span class="stat-label">COINS NEEDED</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="games-section">
+                <div class="section-heading">
+                    <h2>THE MACHINES</h2>
+                    <span>SELECT A CABINET</span>
+                </div>
+
+                <div class="game-grid">
+                    <article class="game-card space-card">
+                        <div class="game-art space-art">
+                            <span class="game-number">GAME 01</span>
+                            <span class="game-emoji">🎮</span>
+                            <span class="art-caption">INCOMING!</span>
+                        </div>
+
+                        <div class="game-info">
+                            <div class="game-meta">
+                                <span class="game-category">SHOOTER</span>
+                                <span class="game-difficulty">★★☆</span>
+                            </div>
+
+                            <h3>SPACE DEFENDER</h3>
+
+                            <p>
+                                Defend the galaxy, blast enemy ships,
+                                and survive the incoming waves.
+                            </p>
+
+                            <div class="game-bottom">
+                                <button class="play-button" data-game="space">PLAY NOW ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card snake-card">
+                        <div class="game-art snake-art">
+                            <span class="game-number">GAME 02</span>
+                            <span class="game-emoji">🐍</span>
+                            <span class="art-caption">GROW. DON'T CRASH.</span>
+                        </div>
+
+                        <div class="game-info">
+                            <div class="game-meta">
+                                <span class="game-category">ARCADE CLASSIC</span>
+                                <span class="game-difficulty">★★☆</span>
+                            </div>
+
+                            <h3>NEON SNAKE</h3>
+
+                            <p>
+                                Eat, grow, and chase a new high score.
+                                Just don't run into yourself.
+                            </p>
+
+                            <div class="game-bottom">
+                                <button class="play-button" data-game="snake">PLAY NOW ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card brick-card">
+                        <div class="game-art brick-art">
+                            <span class="game-number">GAME 03</span>
+                            <span class="game-emoji">🧱</span>
+                            <span class="art-caption">BREAK EVERYTHING.</span>
+                        </div>
+
+                        <div class="game-info">
+                            <div class="game-meta">
+                                <span class="game-category">SKILL</span>
+                                <span class="game-difficulty">★★★</span>
+                            </div>
+
+                            <h3>BRICK BREAKER</h3>
+
+                            <p>
+                                Keep the ball alive, smash every brick,
+                                and clear the entire board.
+                            </p>
+
+                            <div class="game-bottom">
+                                <button class="play-button" data-game="brick">PLAY NOW ↗</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <footer class="arcade-footer">
+                <span>POCKET ARCADE © 2026</span>
+                <span>INSERT COIN? NAH.</span>
+            </footer>
         </main>
+
+        <div class="game-overlay" id="brick-overlay" hidden>
+  <div class="game-window">
+    <div class="game-window-header">
+      <div>
+        <span class="game-category">POCKET ARCADE / GAME 03</span>
+        <h2>BRICK BREAKER</h2>
+      </div>
+      <button id="close-brick" class="close-button" aria-label="Close game">✕</button>
+    </div>
+
+    <div class="game-score">
+      <span>SCORE: <strong id="brick-score">0</strong></span>
+      <span>BEST: <strong id="brick-best">0</strong></span>
+    </div>
+
+    <canvas id="brick-canvas" width="400" height="400"></canvas>
+
+    <p id="brick-message" class="game-message">Press START to play</p>
+
+    <div class="game-controls">
+      <button id="brick-start" class="play-button">START GAME</button>
+      <button id="brick-restart" class="secondary-button">RESTART</button>
+    </div>
+
+    <p class="controls-hint">MOVE: A / D OR ← / → OR MOUSE</p>
+  </div>
+</div>
+
+        <div class="game-overlay" id="space-overlay" hidden>
+  <div class="game-window">
+    <div class="game-window-header">
+      <div>
+        <span class="game-category">POCKET ARCADE / GAME 01</span>
+        <h2>SPACE DEFENDER</h2>
+      </div>
+
+      <button id="close-space" class="close-button" aria-label="Close game">✕</button>
+    </div>
+
+    <div class="game-score">
+      <span>SCORE: <strong id="space-score">0</strong></span>
+      <span>BEST: <strong id="space-best">0</strong></span>
+    </div>
+
+    <canvas id="space-canvas" width="400" height="400"></canvas>
+
+    <p id="space-message" class="game-message">Press START to play</p>
+
+    <div class="game-controls">
+      <button id="space-start" class="play-button">START GAME</button>
+      <button id="space-restart" class="secondary-button">RESTART</button>
+    </div>
+
+    <p class="controls-hint">MOVE: A / D OR ← / → | SHOOT: SPACE</p>
+  </div>
+</div>
+
+        <div class="game-overlay" id="snake-overlay" hidden>
+            <div class="game-window">
+                <div class="game-window-header">
+                    <div>
+                        <span class="game-category">POCKET ARCADE / GAME 02</span>
+                        <h2>NEON SNAKE</h2>
+                    </div>
+                    <button id="close-snake" class="close-button" aria-label="Close game">✕</button>
+                </div>
+
+                <div class="game-score">
+                    <span>SCORE: <strong id="snake-score">0</strong></span>
+                    <span>BEST: <strong id="snake-best">0</strong></span>
+                </div>
+
+                <canvas id="snake-canvas" width="400" height="400"></canvas>
+
+                <p id="snake-message" class="game-message">Press START to play</p>
+
+                <div class="game-controls">
+                    <button id="snake-start" class="play-button">START GAME</button>
+                    <button id="snake-restart" class="secondary-button">RESTART</button>
+                </div>
+
+                <p class="controls-hint">MOVE: ARROW KEYS / WASD</p>
+            </div>
+        </div>
+
+        <script src="js/games/snake.js"></script>
+        <script src="js/games/space.js"></script>
+        <script src="js/games/brick.js"></script>
     </body>
 </html>
